@@ -26,6 +26,9 @@ public abstract class Operator {
 		if(str.length()>0) str=str.substring(0,str.length()-1);
 		else str="";
 	}
+	public String getStr(){
+		return str;
+	}
 	public abstract double getResult();
 	public abstract String toString();
 }
