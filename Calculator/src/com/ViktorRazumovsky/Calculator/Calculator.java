@@ -221,5 +221,6 @@ public class Calculator {
 	public void memClear() {
 		statMemC=false;
 		MemStr="";
+		statMem=!statMem;
 	}
 }
