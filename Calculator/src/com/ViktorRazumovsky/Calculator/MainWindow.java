@@ -69,7 +69,6 @@ public class MainWindow {
 				setText();
 			}
 		});
-		frmCalculator.setType(Type.UTILITY);
 		frmCalculator.setTitle("Calculator");
 		frmCalculator.setResizable(false);
 		frmCalculator.setBounds(100, 100, 300, 300);
