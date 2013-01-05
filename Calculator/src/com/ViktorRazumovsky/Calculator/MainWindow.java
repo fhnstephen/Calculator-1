@@ -21,6 +21,9 @@ public class MainWindow {
 	private JFrame frmCalculator;
 	public JTextField textField;
 	public Calculator MyCalc;
+	public JButton btnMem;
+	public JButton btnMemClear;
+	
 
 	/**
 	 * Launch the application.
@@ -334,7 +337,7 @@ public class MainWindow {
 		});
 		panel.add(btnSubtraction);
 		
-		JButton btnMem = new JButton("M");
+		btnMem = new JButton("M");
 		btnMem.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
@@ -420,11 +423,11 @@ public class MainWindow {
 		});
 		panel.add(btnSummary);
 		
-		JButton btnMemClear = new JButton("MC");
+		btnMemClear = new JButton("MC");
 		btnMemClear.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
-				MyCalc.add('q');
+				MyCalc.add('s');
 				setText();
 			}
 		});
@@ -440,7 +443,12 @@ public class MainWindow {
 	}
 	
 	public void setText() {
-		textField.setText(MyCalc.toString());
+		Stat tmp=MyCalc.getStat();
+		textField.setText(tmp.str);
+		btnMem.setEnabled(tmp.mem);
+		btnMemClear.setEnabled(tmp.memC);
+		tmp=null;
+		
 	}
 
 }
