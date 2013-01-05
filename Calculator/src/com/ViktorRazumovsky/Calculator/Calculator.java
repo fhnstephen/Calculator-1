@@ -73,9 +73,13 @@ public class Calculator {
 			Old=null;
 		}
 		if(arg=='z') {
-			Current.znak();
-			if(status=='r') status='f';
-			Old=null;
+			if(status=='r') {
+				Current.add(Double.toString(Old.getResult()));
+				Current.znak();
+				status='f';
+				Old=null;
+			}
+			else Current.znak();
 		}
 		if(arg=='+') addSummary();
 		if(arg=='-') addSubtraction();
