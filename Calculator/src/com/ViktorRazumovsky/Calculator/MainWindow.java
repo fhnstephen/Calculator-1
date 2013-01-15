@@ -4,7 +4,6 @@ import java.awt.EventQueue;
 
 import javax.swing.JFrame;
 import javax.swing.UIManager;
-import java.awt.Window.Type;
 import javax.swing.JTextField;
 import java.awt.BorderLayout;
 import javax.swing.JPanel;
@@ -15,6 +14,13 @@ import java.awt.event.KeyEvent;
 import javax.swing.SwingConstants;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.awt.Rectangle;
+import javax.swing.border.EmptyBorder;
+import java.awt.Insets;
+import javax.swing.border.BevelBorder;
+import javax.swing.border.LineBorder;
+import java.awt.Color;
+import javax.swing.border.SoftBevelBorder;
 
 public class MainWindow {
 
@@ -75,6 +81,8 @@ public class MainWindow {
 		frmCalculator.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
 		textField = new JTextField();
+		textField.setBorder(new SoftBevelBorder(BevelBorder.LOWERED, null, null, null, null));
+		textField.setMargin(new Insets(5, 5, 5, 5));
 		textField.setHorizontalAlignment(SwingConstants.RIGHT);
 		textField.addKeyListener(new KeyAdapter() {
 			@Override
@@ -88,6 +96,7 @@ public class MainWindow {
 		textField.setColumns(10);
 		
 		JPanel panel = new JPanel();
+		panel.setBorder(new BevelBorder(BevelBorder.LOWERED, null, null, null, null));
 		panel.addKeyListener(new KeyAdapter() {
 			@Override
 			public void keyPressed(KeyEvent e) {
