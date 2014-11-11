@@ -7,10 +7,10 @@ import org.junit.Before;
 import org.junit.Test;
 
 public class OperatorSubtractionTest {
-	private OperatorMultiplication op;
+	private OperatorSubtraction op;
 	@Before
 	public void setUp() throws Exception {
-		op = new OperatorMultiplication(0);
+		op = new OperatorSubtraction(0);
 	}
 
 	@After
@@ -19,17 +19,27 @@ public class OperatorSubtractionTest {
 
 	@Test
 	public final void testGetResult() {
-		fail("Not yet implemented"); // TODO
+		op.str = "";
+		assertEquals(0, op.getResult(), 1e-6);
+		op.str = ".";
+		assertEquals(0, op.getResult(), 1e-6);
+		op.str = "-";
+		assertEquals(0, op.getResult(), 1e-6);
+		op.str = "-";
+		op.add("1");
+		assertEquals("-1", op.getStr());
+		assertEquals(1, op.getResult(), 1e-6);
 	}
 
 	@Test
 	public final void testToString() {
-		fail("Not yet implemented"); // TODO
+		op.toString();
 	}
 
 	@Test
 	public final void testOperatorSubtraction() {
-		fail("Not yet implemented"); // TODO
+		op = new OperatorSubtraction(1);
+		assertEquals(1, op.getResult(), 1e-6);
 	}
 
 }

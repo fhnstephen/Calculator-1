@@ -19,7 +19,15 @@ public class OperatorDivisionTest {
 
 	@Test
 	public final void testGetResult() {
-		op.getResult();
+		op.str = "";
+		assertEquals(0, op.getResult(), 1e-6);
+		op.str = "-";
+		assertEquals(0, op.getResult(), 1e-6);
+		op.str = ".";
+		assertEquals(0, op.getResult(), 1e-6);
+		op = new OperatorDivision(2);
+		op.str = "2";
+		assertEquals(1, op.getResult(), 1e-6);
 	}
 
 	@Test
