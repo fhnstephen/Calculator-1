@@ -86,6 +86,27 @@ public class CalculatorTest {
 		for (char i = '0'; i <= '9'; i++) {
 			calculator.add(i);
 		}
+		calculator.add('+');
+		calculator.add('5');
+		calculator.add('=');
+		assertEquals("5.0123456789", calculator.getStat().str);
+		calculator.add('1');
+		calculator.add('0');
+		calculator.add('/');
+		calculator.add('2');
+		assertEquals("10.0/2", calculator.getStat().str);
+		calculator.add('=');
+		assertEquals(5.0, Double.valueOf(calculator.getStat().str).doubleValue(), 0.1);
+		calculator.add('1');
+		calculator.add('+');
+		calculator.add('2');
+		calculator.add('*');
+		assertEquals("3.0*", calculator.getStat().str);
+		calculator.add('2');
+		calculator.add('b');
+		assertEquals("3.0*", calculator.getStat().str);
+		calculator.add('c');
+		assertEquals("", calculator.getStat().str);
 	}
 
 	/**
@@ -99,6 +120,8 @@ public class CalculatorTest {
 		calculator.addResult();
 		calculator.memPlus();
 		calculator.addSummary();
+		calculator.addResult();
+		assertEquals("0.0", calculator.getStat().str);
 	}
 
 	/**
@@ -112,6 +135,8 @@ public class CalculatorTest {
 		calculator.addResult();
 		calculator.memPlus();
 		calculator.addSubtraction();
+		calculator.addResult();
+		assertEquals("0.0", calculator.getStat().str);
 	}
 
 	/**
@@ -125,6 +150,8 @@ public class CalculatorTest {
 		calculator.addResult();
 		calculator.memPlus();
 		calculator.addMultiplication();
+		calculator.addResult();
+		assertEquals("0.0", calculator.getStat().str);
 	}
 
 	/**
@@ -138,6 +165,8 @@ public class CalculatorTest {
 		calculator.addResult();
 		calculator.memPlus();
 		calculator.addDivision();
+		calculator.addResult();
+		assertEquals("0.0", calculator.getStat().str);
 	}
 
 	/**
@@ -150,6 +179,7 @@ public class CalculatorTest {
 		calculator.addSummary();
 		calculator.addResult();
 		calculator.addResult();
+		assertEquals("0.0", calculator.getStat().str);
 	}
 
 	/**
@@ -158,6 +188,7 @@ public class CalculatorTest {
 	@Test
 	public final void testClear() {
 		calculator.clear();
+		assertEquals("", calculator.getStat().str);
 	}
 
 	/**
@@ -169,6 +200,7 @@ public class CalculatorTest {
 		calculator.memPlus();
 		calculator.status = 'r';
 		calculator.memPlus();
+		assertEquals("", calculator.getStat().str);
 	}
 
 	/**
@@ -178,6 +210,7 @@ public class CalculatorTest {
 	public final void testMemClear() {
 		calculator.memClear();
 		calculator.memClear();
+		assertEquals("", calculator.getStat().str);
 	}
 
 }
