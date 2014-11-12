@@ -32,13 +32,6 @@ public class CalculatorTest {
 	public void tearDown() throws Exception {
 	}
 
-	/**
-	 * Test method for {@link com.ViktorRazumovsky.Calculator.Calculator#Calculator()}.
-	 */
-	@Test
-	public final void testCalculator() {
-		assertNotEquals(calculator, null);
-	}
 
 	/**
 	 * Test method for {@link com.ViktorRazumovsky.Calculator.Calculator#getStat()}.
@@ -96,7 +89,12 @@ public class CalculatorTest {
 	 */
 	@Test
 	public final void testAddSummary() {
-		fail("Not yet implemented"); // TODO
+		calculator.addSummary();
+		calculator.addResult();
+		calculator.addSummary();
+		calculator.addResult();
+		calculator.memPlus();
+		calculator.addSummary();
 	}
 
 	/**
@@ -104,7 +102,12 @@ public class CalculatorTest {
 	 */
 	@Test
 	public final void testAddSubtraction() {
-		fail("Not yet implemented"); // TODO
+		calculator.addSubtraction();
+		calculator.addResult();
+		calculator.addSubtraction();
+		calculator.addResult();
+		calculator.memPlus();
+		calculator.addSubtraction();
 	}
 
 	/**
@@ -112,7 +115,12 @@ public class CalculatorTest {
 	 */
 	@Test
 	public final void testAddMultiplication() {
-		fail("Not yet implemented"); // TODO
+		calculator.addMultiplication();
+		calculator.addResult();
+		calculator.addMultiplication();
+		calculator.addResult();
+		calculator.memPlus();
+		calculator.addMultiplication();
 	}
 
 	/**
@@ -120,7 +128,12 @@ public class CalculatorTest {
 	 */
 	@Test
 	public final void testAddDivision() {
-		fail("Not yet implemented"); // TODO
+		calculator.addDivision();
+		calculator.addResult();
+		calculator.addDivision();
+		calculator.addResult();
+		calculator.memPlus();
+		calculator.addDivision();
 	}
 
 	/**
@@ -128,7 +141,11 @@ public class CalculatorTest {
 	 */
 	@Test
 	public final void testAddResult() {
-		fail("Not yet implemented"); // TODO
+		calculator.clear();
+		calculator.addResult();
+		calculator.addSummary();
+		calculator.addResult();
+		calculator.addResult();
 	}
 
 	/**
@@ -136,7 +153,7 @@ public class CalculatorTest {
 	 */
 	@Test
 	public final void testClear() {
-		fail("Not yet implemented"); // TODO
+		calculator.clear();
 	}
 
 	/**
@@ -144,7 +161,10 @@ public class CalculatorTest {
 	 */
 	@Test
 	public final void testMemPlus() {
-		fail("Not yet implemented"); // TODO
+		calculator.memPlus();
+		calculator.memPlus();
+		calculator.status = 'r';
+		calculator.memPlus();
 	}
 
 	/**
@@ -152,7 +172,8 @@ public class CalculatorTest {
 	 */
 	@Test
 	public final void testMemClear() {
-		fail("Not yet implemented"); // TODO
+		calculator.memClear();
+		calculator.memClear();
 	}
 
 }
