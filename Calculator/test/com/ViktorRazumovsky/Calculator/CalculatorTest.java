@@ -51,12 +51,16 @@ public class CalculatorTest {
 	public final void testAdd() 
 	{
 		calculator.add('m');
+		assertEquals("", calculator.getStat().str);
 		calculator.add('s');
+		assertEquals("", calculator.getStat().str);
 		for (char i = '0'; i <= '9'; i++) {
 			calculator.add('.');
 			calculator.add(i);
 			calculator.add('+');
 			calculator.add('=');
+			if (i != '0')
+				assertEquals(Double.valueOf((char)(i - 1) + "." + i) + "", calculator.getStat().str);
 			calculator.add(i);
 		}
 		calculator.add('z');

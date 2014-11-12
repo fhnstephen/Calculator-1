@@ -7,7 +7,7 @@ import org.junit.runners.Suite.SuiteClasses;
 
 @RunWith(Suite.class)
 @SuiteClasses({ OperatorDivisionTest.class, OperatorMultiplicationTest.class,
-		OperatorSubtractionTest.class, OperatorSummaryTest.class,
+		OperatorSubtractionTest.class, OperatorSummaryTest.class, OperatorEmptyTest.class,
 		OperatorTest.class, CalculatorTest.class, AllTestsTest.class})
 public class AllTests {
 	static {
